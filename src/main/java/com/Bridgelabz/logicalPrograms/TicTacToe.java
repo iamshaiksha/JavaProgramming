@@ -1,10 +1,4 @@
 package com.Bridgelabz.logicalPrograms;
-/**Write a Program to play a Cross Game or Tic-Tac-Toe Game.
- * Player 1 is the Computer and the Player 2 is the user. Player 1 take Random Cell that is the Column and Row.
- *  @Shaik Shaiksha vali
- *  1.0v
- *  9/01/2020
- */
 
 import java.util.Scanner;
 
@@ -123,3 +117,4 @@ public class TicTacToe {
 	}
 
 }
+
