@@ -7,19 +7,27 @@ package com.Bridgelabz.utility;
 
  **/
 
-import java.text.SimpleDateFormat;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.bridgelabz.dataStructures.Node;
+import com.bridgelabz.dataStructures.Node1;
+
+
+
 
 public class Utility {
-
+	Node2 next;
 	private final String REGEX_NAME = "<<name>>";
 	private final String REGEX_FULLNAME = "<<full name>> ";
 	private final String REGEX_MOBILE_NO = "xxxxxxxxxx";
 	private final String REGEX_DATE = "12/06/2016";
 	public static Scanner scan=new Scanner(System.in);
+	Node2 head;
 	public static String getString()
 	{
 		return scan.next();
@@ -180,4 +188,62 @@ public class Utility {
 		return se;
 
 	}
+
+		
+
+    public static boolean isPrime(int x){
+        boolean itIs = true;
+        for (int i = 2; i < x; i++){
+            if(x%i == 0){
+                itIs = false;  
+            }
+        }
+        return itIs;
+		
+	}
+	public boolean areAnagram(char[] x, char[] y) {
+		Arrays.sort(x);
+		Arrays.sort(y);
+	String	string1=new String(x);
+		String string2=new String(y);
+		if(string1.equals(string2))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+		
+	}
+	public void add(String data ) {
+		Node2 nod = new Node2();
+		nod.data = data;
+		nod.next = null;
+		if (head == null) {
+			head = nod;
+		} else { 
+			Node2 n = head;
+			while (n.next != null) {
+				n = n.next;
+			}
+			n.next = nod;
+		}
+	}
+	public String display() {
+		Node2 node = head; // taking the head pointer
+        String data=" ";
+		while (node.next != null) {
+			//System.out.println(node.data);
+            data=node.data+" "+data;
+			node = node.next;
+			
+		}
+		//System.out.println(node.data+"@@@@"); //printing the last node data
+       return data;
+		
+		
+		
+	}
+	
 }
