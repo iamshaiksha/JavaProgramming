@@ -28,7 +28,27 @@ public class Appointment {
 	{
 		return "Appointment [did=" + did + ", date=" + date +  "]";
 	}
-	
+	public int hashCode()
+	{
+    	return this.did.hashCode()+this.date.hashCode();
+	}
+	//checking for equality
+	public boolean equals(Object object)
+	{
+    	if (object == null) 
+			return false;
+    	if (object == this) 
+			return true;
+    	if (!(object instanceof Appointment))
+			return false;
+    	
+    	Appointment dA = (Appointment) object;
+
+		if((this.did==dA.did) && (this.date.equals(dA.date)))
+			return true;
+		else
+			return false;
+	}
 	
 
 }
